@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Courseago</title>
+</head>
+
+<body>
+    <div class="container min-vh-100 d-flex flex-column justify-content-center">
+        <h1>UBC Course Availability Notifier</h1><br>
+
+        <p class="text-wrap">Courseago notifies you on a discord server (enter URL of server
+            where notification is
+            wanted below) as soon
+            as seat in any of the sections (or a specific one, if mentioned) of a course at the University of British
+            Columbia, Vancouver become available. Courseago only takes into account the general seats available.
+        </p><br>
+
+        <form action="/submit" method="POST">
+
+            <div class="col-6">
+                <label for="course_code">Course Code:</label>
+                <input type="text" class="form-control" name="course_code" placeholder="CPSC, MATH, ECON"
+                    required><br><br>
+
+                <label for="course_number">Course Number:</label>
+                <input type="text" class="form-control" name="course_number" placeholder="100, 101, 150A"
+                    required><br><br>
+
+                <label for="term">Term:</label>
+                <input type="number" class="form-control" min="1" max="2" name="term" placeholder="1 or 2"
+                    required><br><br>
+
+                <label for="discord_webhook">Discord Webhook URL:</label>
+
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon3">https://discord.com/api/webhooks/</span>
+                    <input type="text" class="form-control" name="discord_webhook " id="basic-url"
+                        aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+
+            <div class="form-text" id="basic-addon4">
+                Click <a href="https://www.youtube.com/watch?v=K8vgRWZnSZw" target="_blank">here </a> to see how to
+                get
+                the Discord webhook
+                URL.
+            </div><br>
+
+            <input type="submit" class="btn btn-primary" value="Start Monitoring">
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
