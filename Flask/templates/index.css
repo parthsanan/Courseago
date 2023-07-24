@@ -1,0 +1,12 @@
+.flex-container {
+    display: flex;
+    flex-direction: column; 
+    margin: auto;
+}
+
+a[target = _blank]{
+    background-image: url(./external-link.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding-right: 1.7em;
+}
